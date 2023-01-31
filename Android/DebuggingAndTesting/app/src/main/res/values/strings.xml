@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">Debugging And Testing</string>
+  <string name="type_operand_one_hint">Type Number 1</string>
+  <string name="type_operand_two_hint">Type Number 2</string>
+  <string name="button_addition_text">+</string>
+  <string name="button_subtraction_text">-</string>
+  <string name="button_multiplication_text">*</string>
+  <string name="button_division_text">/</string>
+</resources>
