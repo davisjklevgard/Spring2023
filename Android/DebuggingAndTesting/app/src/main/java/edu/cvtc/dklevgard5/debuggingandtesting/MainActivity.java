@@ -1,4 +1,4 @@
-package edu.cvtc.ewackwitz.debuggingandtesting;
+package edu.cvtc.dklevgard5.debuggingandtesting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void computeResult(Calculator.Operator operator) {
 
-    int numberOne, numberTwo;
+    double numberOne, numberTwo;
     String result;
 
     try {
@@ -79,15 +79,15 @@ public class MainActivity extends AppCompatActivity {
         break;
 
       default:
-        result = "Error";
+        result = "Please try again";
         break;
     }
 
     mTextViewResult.setText(result);
   }
 
-  private static int getNumber(EditText editTextNumber) {
-    return Integer.valueOf(getText(editTextNumber));
+  private static Double getNumber(EditText editTextNumber) {
+    return Double.valueOf(getText(editTextNumber));
   }
 
   private static String getText(EditText editTextNumber) {

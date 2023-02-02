@@ -1,4 +1,4 @@
-package edu.cvtc.ewackwitz.debuggingandtesting;
+package edu.cvtc.dklevgard5.debuggingandtesting;
 
 import android.content.Context;
 
