@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OddOrEven</string>
+    <string name="plainText_oddeven">10</string>
+    <string name="button_oddeven">Submit</string>
+</resources>

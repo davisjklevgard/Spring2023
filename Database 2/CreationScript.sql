@@ -1,0 +1,69 @@
+-- ITSupportSystem Database Creation Script
+-- Developed by Davis Klevgard
+-- Version: 1.1
+-- Modified Date: 02/13/2023
+CREATE DATABASE IF NOT EXISTS `itsupportsystems`;
+
+USE `itsupportsystems`;
+
+DROP TABLE IF EXISTS `customer`;
+
+CREATE TABLE `customer` (
+    `CustomerID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `FirstName` VARCHAR(25) DEFAULT NULL,
+    `LastName` VARCHAR(25) DEFAULT NULL,
+    `Email` VARCHAR(100) DEFAULT NULL,
+    `Phone` VARCHAR(10) DEFAULT NULL,
+    `Street` VARCHAR(30) DEFAULT NULL,
+    `City` VARCHAR(30) DEFAULT NULL,
+    `Region` VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (`CustomerID`)
+)  AUTO_INCREMENT=100;
+
+DROP TABLE IF EXISTS `technician`;
+
+CREATE TABLE `technician` (
+    `EmployeeID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `FirstName` VARCHAR(25) DEFAULT NULL,
+    `LastName` VARCHAR(25) DEFAULT NULL,
+    `Email` VARCHAR(100) DEFAULT NULL,
+    `Phone` VARCHAR(10) DEFAULT NULL,
+    `Title` VARCHAR(20) DEFAULT NULL,
+    `Salary` DECIMAL(9 , 2 ) DEFAULT NULL,
+    PRIMARY KEY (`EmployeeID`)
+)  AUTO_INCREMENT=100;
+
+
+DROP TABLE IF EXISTS `device`;
+
+CREATE TABLE `technician` (
+    `DeviceID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `DeviceType` VARCHAR(20) DEFAULT NULL,
+    `Description` VARCHAR(40) DEFAULT NULL,
+    `CustomerID` INT DEFAULT NULL,
+    PRIMARY KEY (`DeviceID`)
+)  AUTO_INCREMENT=100;
+
+DROP TABLE IF EXISTS `service`;
+
+CREATE TABLE `service` (
+    `ServiceID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `ServiceType` VARCHAR(50) DEFAULT NULL,
+    `Cost` DECIMAL(5 , 2 ) DEFAULT NULL,
+    `RepairTime` TIME DEFAULT NULL,
+    PRIMARY KEY (`ServiceID`)
+)  AUTO_INCREMENT=100;
+
+DROP TABLE IF EXISTS `servicerequest`;
+
+CREATE TABLE `servicerequest` (
+    `RequestID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `CustomerID` INT DEFAULT NULL,
+    `DeviceID` INT DEFAULT NULL,
+    `ServiceID` INT DEFAULT NULL,
+    `EmployeeID` INT DEFAULT NULL,
+    `Notes` VARCHAR(50) DEFAULT NULL,
+    `TotalCost` DECIMAL(9 , 2 ) DEFAULT NULL,
+    `OrderDate` DATETIME DEFAULT NULL,
+    PRIMARY KEY (`RequestID`)
+)  AUTO_INCREMENT=100;

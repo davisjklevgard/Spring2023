@@ -117,9 +117,11 @@ WHERE
     FlightID IN (SELECT 
             FlightID
         FROM
-            passgroup
-                INNER JOIN
             manifestpassenger
+				INNER JOIN
+			passgroupmember USING (PassID)
+				INNER JOIN
+			passgroup USING (GroupID)
         WHERE
             GroupTypeID = 1)
 GROUP BY FlightID
